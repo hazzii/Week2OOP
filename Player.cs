@@ -29,6 +29,8 @@ namespace ConsoleApplication
 
         public void Draw()
         {
+            Console.CursorLeft = xPosition;
+            Console.CursorTop = yPosition;
             Console.Write(sprite);
         }
 
