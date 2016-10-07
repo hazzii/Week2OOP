@@ -36,6 +36,8 @@ namespace ConsoleApplication
             }
 
             player1.Move(direction);
+            Console.Clear();
+            player1.Draw();
 
             Console.ReadKey(true);
         }
