@@ -9,6 +9,7 @@ namespace ConsoleApplication
         int yPosition;
         char sprite;
         int health;
+        int speed;
 
         public int XPosition
         {
@@ -26,6 +27,7 @@ namespace ConsoleApplication
             sprite = '&';
             xPosition = 3;
             yPosition = 3;
+            speed = 1;
         }
 
         public void Draw()
@@ -35,7 +37,28 @@ namespace ConsoleApplication
             Console.Write(sprite);
         }
 
+        public void Move(string direction)
+        {
+            switch(direction)
+            {
+                case "up" :
+                    yPosition -= speed;
+                break;
+                case "down" :
+                    yPosition += speed;
+                break;
+                case "left" :
+                    xPosition -= speed;
+                break;
+                case "right" :
+                    xPosition += speed;
+                break;
+                default:
+                break;
 
+            }
+
+        }
 
     }
 
