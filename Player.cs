@@ -8,6 +8,7 @@ namespace ConsoleApplication
         int xPosition;
         int yPosition;
         char sprite;
+        int health;
 
         public int XPosition
         {
@@ -34,6 +35,9 @@ namespace ConsoleApplication
             Console.Write(sprite);
         }
 
+
+
     }
+
 
 }
