@@ -38,7 +38,26 @@ namespace ConsoleApplication
                     direction = "right";
                 }
 
+                string direction2 = "";
+                if(keypress.Key == ConsoleKey.W)
+                {
+                    direction2 = "up";
+                }
+                if(keypress.Key == ConsoleKey.S)
+                {
+                    direction2 = "down";
+                }
+                if(keypress.Key == ConsoleKey.A)
+                {
+                    direction2 = "left";
+                }
+                if(keypress.Key == ConsoleKey.D)
+                {
+                    direction2 = "right";
+                }
+
                 player1.Move(direction);
+                player2.Move(direction2);
                 Console.Clear();
                 player1.Draw();
                 player2.Draw();
