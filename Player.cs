@@ -30,6 +30,14 @@ namespace ConsoleApplication
             speed = 1;
         }
 
+        public Player(char playerSprite)
+        {
+            sprite = playerSprite;
+            xPosition = 3;
+            yPosition = 3;
+            speed = 1;
+        }
+
         public void Draw()
         {
             Console.CursorLeft = xPosition;
