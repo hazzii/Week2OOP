@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+
 
 namespace ConsoleApplication
 {
@@ -19,50 +21,53 @@ namespace ConsoleApplication
 
             while(true)
             {
-                string direction = "";
-                ConsoleKeyInfo keypress = Console.ReadKey(true);
-                if(keypress.Key == ConsoleKey.UpArrow)
+                if(Console.KeyAvailable)
                 {
-                    direction = "up";
-                }
-                if(keypress.Key == ConsoleKey.DownArrow)
-                {
-                    direction = "down";
-                }
-                if(keypress.Key == ConsoleKey.LeftArrow)
-                {
-                    direction = "left";
-                }
-                if(keypress.Key == ConsoleKey.RightArrow)
-                {
-                    direction = "right";
-                }
+                    string direction = "";
+                    ConsoleKeyInfo keypress = Console.ReadKey(true);
+                    if(keypress.Key == ConsoleKey.UpArrow)
+                    {
+                        direction = "up";
+                    }
+                    if(keypress.Key == ConsoleKey.DownArrow)
+                    {
+                        direction = "down";
+                    }
+                    if(keypress.Key == ConsoleKey.LeftArrow)
+                    {
+                        direction = "left";
+                    }
+                    if(keypress.Key == ConsoleKey.RightArrow)
+                    {
+                        direction = "right";
+                    }
 
-                string direction2 = "";
-                if(keypress.Key == ConsoleKey.W)
-                {
-                    direction2 = "up";
-                }
-                if(keypress.Key == ConsoleKey.S)
-                {
-                    direction2 = "down";
-                }
-                if(keypress.Key == ConsoleKey.A)
-                {
-                    direction2 = "left";
-                }
-                if(keypress.Key == ConsoleKey.D)
-                {
-                    direction2 = "right";
-                }
+                    string direction2 = "";
+                    if(keypress.Key == ConsoleKey.W)
+                    {
+                        direction2 = "up";
+                    }
+                    if(keypress.Key == ConsoleKey.S)
+                    {
+                        direction2 = "down";
+                    }
+                    if(keypress.Key == ConsoleKey.A)
+                    {
+                        direction2 = "left";
+                    }
+                    if(keypress.Key == ConsoleKey.D)
+                    {
+                        direction2 = "right";
+                    }
 
-                player1.Move(direction);
-                player2.Move(direction2);
-                Console.Clear();
-                player1.Draw();
-                player2.Draw();
+                    player1.Move(direction);
+                    player2.Move(direction2);
+                }
+                    Console.Clear();
+                    player1.Draw();
+                    player2.Draw();
+                    Thread.Sleep(1000/30);
             }
-            Console.ReadKey(true);
         }
     }
 }
