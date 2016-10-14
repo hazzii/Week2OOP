@@ -15,7 +15,7 @@ namespace ConsoleApplication
             Console.Write("Player 1, press a key to represent your player: ");
             char playerSprite = Console.ReadKey().KeyChar;
 
-            players.Add(new Player(playerSprite));
+            players.Add(new Player(playerSprite, ConsoleColor.DarkCyan));
 
 
             Console.Write("Player 2, press a key to represent your player: ");
