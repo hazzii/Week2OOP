@@ -10,14 +10,18 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             List<Player> players = new List<Player>();
+            
 
-            players.Add(new Player());
-            Console.Clear();
-
-            Console.Write("Player 2, press a key to represent your player: ");
+            Console.Write("Player 1, press a key to represent your player: ");
             char playerSprite = Console.ReadKey().KeyChar;
 
             players.Add(new Player(playerSprite));
+
+
+            Console.Write("Player 2, press a key to represent your player: ");
+            playerSprite = Console.ReadKey().KeyChar;
+
+            players.Add(new Player(playerSprite, ConsoleColor.Magenta));
 
 
 
@@ -87,6 +91,7 @@ namespace ConsoleApplication
             {
                 player.Draw();
             }
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
 }
