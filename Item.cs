@@ -8,6 +8,7 @@ namespace ConsoleApplication
         string name;
         string description;
         char sprite;
+        
         public Item()
         {
 
@@ -21,7 +22,15 @@ namespace ConsoleApplication
             this.sprite = sprite;
         }
 
+        public void Draw()
+        {
+            Console.Write(sprite);
+        }
 
+        public void Describe()
+        {
+            Console.WriteLine(name + ": " + description);
+        }
 
     }
 
