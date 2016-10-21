@@ -31,20 +31,20 @@ namespace ConsoleApplication
         {
             if(IsOpen)
             {
-            if(Items.Count < maxItems)
-            {
-                Items.Add(item);
+                if(Items.Count < maxItems)
+                {
+                    Items.Add(item);
+                }
+                else
+                {
+                    Console.WriteLine("Unable to add item, inventory is full");
+                }
             }
             else
             {
-                Console.WriteLine("Unable to add item, inventory is full");
+                Console.WriteLine("Inventory is closed");
             }
         }
-        else
-        {
-            Console.WriteLine("Inventory is closed");
-        }
-
         public void Open()
         {
             IsOpen = true;
