@@ -18,12 +18,12 @@ namespace ConsoleApplication
             players.Add(new Player(playerSprite, ConsoleColor.DarkCyan));
 
 
-            Console.Write("Player 2, press a key to represent your player: ");
-            playerSprite = Console.ReadKey().KeyChar;
+           
 
             players.Add(new Player(playerSprite, ConsoleColor.Magenta));
 
-
+           /* Console.Write("Player 2, press a key to represent your player: ");
+            playerSprite = Console.ReadKey().KeyChar; */
 
             Console.WriteLine("\n\nRetroRPG");
             Console.WriteLine("Press any key to begin!");
@@ -56,6 +56,12 @@ namespace ConsoleApplication
                     {
                         direction = "right";
                     }
+                    if(keypress.Key == ConsoleKey.C)
+                    {
+                        players[0].inventory.Open();
+                        players[0].inventory.AddItem(new Item("Sword", "A curvy sword", 't'));
+                        players[0].inventory.Close();
+                    }
 
                     string direction2 = "";
                     if(keypress.Key == ConsoleKey.W)
@@ -74,9 +80,10 @@ namespace ConsoleApplication
                     {
                         direction2 = "right";
                     }
+                    
 
                     players[0].Move(direction);
-                    players[1].Move(direction2);
+                    //players[1].Move(direction2);
                 }
                     Console.Clear();
                     
@@ -90,6 +97,8 @@ namespace ConsoleApplication
             foreach(Player player in players)
             {
                 player.Draw();
+                Console.SetCursorPosition(1, 5);
+                player.inventory.ListInventory();
             }
             Console.ForegroundColor = ConsoleColor.Gray;
         }

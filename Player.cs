@@ -12,6 +12,8 @@ namespace ConsoleApplication
         int speed;
         ConsoleColor color = ConsoleColor.Gray;
 
+        public Inventory inventory = new Inventory();
+
         public int XPosition
         {
             get { return xPosition; }
